@@ -6,13 +6,12 @@ class ExpensesPage
   end
 
   def total_balance
-  normalize_money(find('div.balance-value').text)
-end
+    money_from('#totalBalance .balance-value')
+  end
 
-def credit_available
-  normalize_money(all('div.balance-value')[1].text)
-end
-
+  def credit_available
+    money_from('#creditAvailable .balance-value')
+  end
 
   def positive_values
     all('.text-success')
@@ -24,7 +23,8 @@ end
 
   private
 
-  def normalize_money(text)
+  def money_from(css)
+    text = find(css, visible: true).text
     text.delete('$ ,').to_f
   end
 end
