@@ -15,7 +15,7 @@ El objetivo principal es validar flujos críticos de negocio desde la perspectiv
 
 ---
 
-## 📂 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```text
 frontend
@@ -31,3 +31,28 @@ frontend
 │   └── expenses_page.rb
 │
 └── .env
+## Explicación de carpetas
+
+features: escenarios BDD escritos en Gherkin (legibles sin código)
+
+step_definition: implementación de los pasos de negocio
+
+pages: Page Object Model, centraliza selectores y lógica de UI
+
+api/spec: pruebas automatizadas de API
+
+schemas: validación de contratos de respuesta
+
+## Configuración del Entorno
+## Requisitos
+
+Ruby 3.x
+
+Google Chrome
+
+Bundler
+
+## Variables de entorno (frontend/.env)
+BASE_URL=https://demo.applitools.com
+HEADLESS=true
+##AUTOR: Nicolas Buitrago
